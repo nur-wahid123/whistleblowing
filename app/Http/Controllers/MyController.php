@@ -12,20 +12,7 @@ class MyController extends Controller
 {
     public function index()
     {
-        try {
-            $pdf = new Dompdf();
-            $message = Message::first();
-            $html = view('singlemessage',compact($message));
-            $pdf->setPaper('A4', 'portrait');
-            $pdf->loadHtml($html);
-
-            $pdf->render();
-
-            return $this->downloadPdf($pdf, 'orders.pdf');
-        } catch (Exception $e) {
-            // Handle exception gracefully (e.g., log error, redirect with error message)
-            return back()->with('error', 'Error generating PDF: ' . $e->getMessage());
-        }
+        return response()->json(["message"=>"Hello"]);
     }
 
     protected function downloadPdf(Dompdf $pdf, string $fileName): Response

@@ -16,6 +16,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
 Route::get('/oi','App\Http\Controllers\MyController@index');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['middleware' => ['isUser']], function () {
