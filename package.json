@@ -23,6 +23,7 @@
         "@react-pdf/renderer": "^3.4.4",
         "daisyui": "^4.7.3",
         "file-saver": "^2.0.5",
+        "pdfjs": "^2.5.3",
         "react-pdf": "^8.0.2",
         "react-pdf-tailwind": "^2.3.0"
     }

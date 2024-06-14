@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
                 }
                 return redirect()->intended(route('picDashboard', absolute: false));
             }
-            return redirect()->intended(route('dashboard', absolute: false));
+            return redirect()->intended(route('home', absolute: false));
         }
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
@@ -53,9 +53,9 @@ class AuthenticatedSessionController extends Controller
             if (Auth::user()->role->second_role == 'admin') {
                 return redirect()->intended(route('adminDashboard', absolute: false));
             }
-            return redirect()->intended(route('picDashboard', absolute: false));
+            return redirect()->intended(route('picLanding', absolute: false));
         }
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('home', absolute: false));
     }
 
     /**

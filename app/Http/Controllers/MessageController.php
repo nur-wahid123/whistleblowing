@@ -16,9 +16,9 @@ class MessageController extends Controller
      */
 
      public function home(){
-        $pesan = Message::where('sender_id', Auth::user()->role_id)->count();
-        $diterima = Message::where('sender_id', Auth::user()->role_id)->where('status', 'diterima')->count();
-        $ditolak = Message::where('sender_id', Auth::user()->role_id)->where('status', 'ditolak')->count();
+        $pesan = Message::where('sender_id', Auth::user()->id)->count();
+        $diterima = Message::where('sender_id', Auth::user()->id)->where('status', 'diterima')->count();
+        $ditolak = Message::where('sender_id', Auth::user()->id)->where('status', 'ditolak')->count();
         $data = ['pesan' => $pesan, 'diterima' => $diterima, 'ditolak' => $ditolak];
         return Inertia::render('LandingPage', compact('data'));
 
